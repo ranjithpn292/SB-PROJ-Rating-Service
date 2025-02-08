@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 
 @Service
@@ -41,6 +40,12 @@ public class RatingServiceImpl implements RatingService {
     @Override
     public List<Rating> getRatingByHotelId(String hotelId) {
         return ratingRepository.findByHotelId(hotelId);
+    }
+
+    @Override
+    public Rating deleteById(String Id) {
+        ratingRepository.deleteById(Id);
+        return null;
     }
 
 
